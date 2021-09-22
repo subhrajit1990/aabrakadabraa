@@ -28,7 +28,19 @@ public String tokenConfigSetup() {
 
 
 
+----------
+RestAssured.baseURI = "";
+RestAssured.basePath = "/token";
 
+// client_secret is different from oauth2 token
+Response response = given()
+            .formParam("client_id",CLIENT_ID)
+            .formParam("client_secret",CLIENT_SECRET)
+            .formParam("grant_type", "client_credentials").post("");
 
+//To get token
+String bearerToken = response.jsonPath().get("access_token");
+
+System.out.println("The bearer token value is "+bearerToken);
 
 
