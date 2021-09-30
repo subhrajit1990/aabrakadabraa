@@ -44,3 +44,19 @@ String bearerToken = response.jsonPath().get("access_token");
 System.out.println("The bearer token value is "+bearerToken);
 
 
+--------------------
+
+
+ArrayList<ProvEdlePrefernces> provEdlePreferncesRes = null;
+
+provEdlePreferncesRes = provEdlePrefernces.findAll();
+
+
+Iterator<ProvEdlePrefernces> itr = provEdlePreferncesRes.iterator();
+
+while (itr.hasNext()) {
+ ProvEdlePrefernces provEdlePrefernces = itr.next();
+ System.out.println("--- Table data ---");
+
+}
+
